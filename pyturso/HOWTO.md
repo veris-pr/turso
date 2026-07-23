@@ -9,13 +9,15 @@ loop.
 1. **Open PLAN.md at the phase.** Note its build list, Rust reading list,
    docs deliverables, and exit criteria. The exit criteria are the phase's
    to-do list — red gates are work, not failure.
-2. **Read the Rust first.** Work through the phase's reading list for data
+2. **Read first.** Work through the module's `TOREAD.md` (its slice of
+   [READING.md](READING.md), the repo guides, and the Rust files) for data
    flow and invariants. Log every question you can't answer as a stub note in
    the target module's `docs/<module>/explanation/` — that backlog becomes
    the explanation docs.
 3. **Work the module folders.** Each `pyturso/<module>/HOWTO.md` gives the
-   internal work order (which file first, what depends on what). Stub files
-   already name their Rust counterparts.
+   internal work order; its `TODO.md` is the checkbox-level task list —
+   check items off in commits. Stub files already name their Rust
+   counterparts.
 4. **Test as you go.** Unit tests next to each internal invariant
    ([tests/unit/HOWTO.md](tests/unit/HOWTO.md)); behavioral cases into the
    phase's corpus directory
