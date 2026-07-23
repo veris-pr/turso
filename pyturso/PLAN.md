@@ -384,7 +384,8 @@ Each module owns a tree under `docs/<module>/` with four quadrants:
   what was simplified, and what the Rust does that pyturso doesn't.
 
 `docs/<module>/README.md` is the module's doc index and lists the planned
-documents with status. Quadrant folders are created when their first doc lands.
+documents with status. Quadrant folders exist upfront, each carrying a
+`HOWTO.md` with quadrant-specific writing rules.
 
 ## 6. Risks & standing decisions
 

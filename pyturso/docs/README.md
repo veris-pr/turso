@@ -23,8 +23,8 @@ House rules:
 - **Reference** docs are scope ledgers where noted (grammar, opcodes,
   functions, dot-commands): every item is supported / planned(phase) /
   out-of-scope. No silent gaps.
-- Quadrant folders are created when their first doc lands; until then each
-  module's `README.md` lists the planned docs with status.
+- Each module's `README.md` lists the planned docs with status; every
+  quadrant folder carries a `HOWTO.md` with its writing rules.
 - Drawings encouraged; if an explanation can't be drawn, it isn't understood
   yet (see the Phase 7 balancing doc mandate).
 
