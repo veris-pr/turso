@@ -5,22 +5,22 @@ a block with the previous one red.
 
 ## Phase 1 — read path
 
-- [ ] `sqlite3_ondisk.py::read_varint` / `write_varint` + boundary unit tests
+- [x] `sqlite3_ondisk.py::read_varint` / `write_varint` + boundary unit tests
       (1–9 bytes, ±1 at each width edge).
-- [ ] Header dataclass: all 100 bytes parsed; reject bad magic (`Corrupt`).
-- [ ] Page decode: page-type dispatch, page-header fields, cell pointer
+- [x] Header dataclass: all 100 bytes parsed; reject bad magic (`Corrupt`).
+- [x] Page decode: page-type dispatch, page-header fields, cell pointer
       array; page-1 offset handled; `pagehex.py` shows it annotated.
-- [ ] Leaf table cells: rowid varint + payload; raw record decode (serial
+- [x] Leaf table cells: rowid varint + payload; raw record decode (serial
       types inline until `types/` lands, then refactor onto `types.record`).
-- [ ] Interior table pages: keys + child pointers + rightmost pointer.
-- [ ] Overflow chains: threshold math from the format doc, chain walk.
-- [ ] `pager.py` minimal: `read_page(n)` through io + `page_cache.py`
+- [x] Interior table pages: keys + child pointers + rightmost pointer.
+- [x] Overflow chains: threshold math from the format doc, chain walk.
+- [x] `pager.py` minimal: `read_page(n)` through io + `page_cache.py`
       (dict cache, no eviction yet — note the debt).
-- [ ] `btree.py::BTreeCursor` (table trees): `rewind` → `next` across page
+- [x] `btree.py::BTreeCursor` (table trees): `rewind` → `next` across page
       boundaries → `seek(rowid)` (binary search within page, descent across
       pages) → payload assembly incl. overflow.
-- [ ] Index B-trees: cursor over index cells (record keys).
-- [ ] `tools/dbdump.py` complete; **gate:** dump == sqlite3 `SELECT *` on the
+- [x] Index B-trees: cursor over index cells (record keys).
+- [x] `tools/dbdump.py` complete; **gate:** dump == sqlite3 `SELECT *` on the
       full Phase 1 fixture checklist (`corpus/phase1_read`).
 
 ## Phase 7 — write path

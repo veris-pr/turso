@@ -19,10 +19,10 @@ lands with its test in the same commit.
 - [x] `posix.py`: `os.open`/`pread`/`pwrite`/`fsync`/`ftruncate`-backed File;
       same unit suite runs against memory and posix backends (tmp files).
 - [x] `clock.py`: `Clock` Protocol + `SystemClock` + `FixedClock`.
-- [ ] Convention documented: draft
+- [x] Convention documented: draft
       `docs/io/explanation/ioresult-as-generators.md` (keystone doc) with the
       "In Turso" section; flip its status row.
-- [ ] Reference docs: `request-and-completion-types.md`, `backend-matrix.md`.
+- [x] Reference docs: `request-and-completion-types.md`, `backend-matrix.md`.
 
 Exit: Phase 1 storage code can be written without ever touching `os.*`
 directly, and a test can pause any I/O mid-flight.

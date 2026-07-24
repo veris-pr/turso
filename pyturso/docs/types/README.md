@@ -18,9 +18,9 @@ Rust: `core/types.rs`, `core/vdbe/value.rs`, `core/vdbe/affinity.rs`, `core/nume
 ### reference/
 | Doc | Phase | Status | Abstract |
 |---|---|---|---|
-| `serial-types.md` | 2 | planned | the full table incl. 8/9 constants, sizes, examples |
-| `affinity-rules.md` | 2 | planned | type-name → affinity resolution; when affinity applies |
-| `comparison-order.md` | 2 | planned | cross-class total order, numeric cross-compare, collations |
+| `serial-types.md` | 2 | current | the full table incl. 8/9 constants, sizes, examples |
+| `affinity-rules.md` | 2 | current | type-name → affinity resolution; when affinity applies |
+| `comparison-order.md` | 2 | current | cross-class total order, numeric cross-compare, collations |
 
 ### explanation/
 | Doc | Phase | Status | Abstract |
