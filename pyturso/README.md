@@ -53,9 +53,10 @@ gates, documentation deliverables — is in **[PLAN.md](PLAN.md)**.
 
 Alongside it, **[READING.md](READING.md)** is the levelling-up curriculum
 (textbooks, university courses, papers, talks) paced against the phases; each
-module folder refines both into a precise **`TODO.md`** (build checklist) and
-**`TOREAD.md`** (that module's slice of the curriculum + repo guides + Rust
-files + earlier pyturso docs).
+module folder refines both into a **`PREREQUISITES.md`** (concept self-test
+gate before starting — see also the [project-wide gate](PREREQUISITES.md)),
+a precise **`TODO.md`** (build checklist), and **`TOREAD.md`** (that module's
+slice of the curriculum + repo guides + Rust files + earlier pyturso docs).
 
 ## Quickstart (once Phase 0 lands)
 

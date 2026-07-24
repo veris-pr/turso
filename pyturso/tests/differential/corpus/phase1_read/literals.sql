@@ -1,0 +1,2 @@
+SELECT 1, 1.5, NULL, 'hi';
+SELECT 1 WHERE 1=1;

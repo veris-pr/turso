@@ -9,7 +9,10 @@ loop.
 1. **Open PLAN.md at the phase.** Note its build list, Rust reading list,
    docs deliverables, and exit criteria. The exit criteria are the phase's
    to-do list — red gates are work, not failure.
-2. **Read first.** Work through the module's `TOREAD.md` (its slice of
+2. **Pass the gate.** Self-test against the module's `PREREQUISITES.md`
+   (and [PREREQUISITES.md](PREREQUISITES.md) project-wide before Phase 0):
+   every concept box checked *from memory*, or detour into the named
+   resource first. Then work through the module's `TOREAD.md` (its slice of
    [READING.md](READING.md), the repo guides, and the Rust files) for data
    flow and invariants. Log every question you can't answer as a stub note in
    the target module's `docs/<module>/explanation/` — that backlog becomes

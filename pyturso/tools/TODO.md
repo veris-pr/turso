@@ -3,7 +3,7 @@
 Build each tool at its phase (notes: [HOWTO.md](HOWTO.md)); check off with a
 how-to doc linked.
 
-- [ ] **Phase 0 — `mkdb.py`**: SQL script → fixture db via stdlib sqlite3;
+- [x] **Phase 0 — `mkdb.py`**: SQL script → fixture db via stdlib sqlite3;
       fixed `page_size`; deterministic content only; gitignored output cache.
 - [ ] **Phase 1 — `pagehex.py`**: annotated page hexdump (header fields,
       cell pointer array, cell boundaries, varint spans). Build alongside

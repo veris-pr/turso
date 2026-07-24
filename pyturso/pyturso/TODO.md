@@ -4,7 +4,7 @@ Work order rationale: [HOWTO.md](HOWTO.md).
 
 ## Phase 0
 
-- [ ] `errors.py`: hierarchy ported from `core/error.rs` variants
+- [x] `errors.py`: hierarchy ported from `core/error.rs` variants
       (`TursoError` base; `Corrupt`, `ParseErr`-mapping, `Constraint`,
       `Busy`, `NotSupported`, …) + mapping table used by the differential
       harness (error → comparison class).

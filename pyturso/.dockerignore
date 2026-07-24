@@ -1,0 +1,9 @@
+# Keep the image build context (pyturso/) lean. The bind mount, not the
+# image, carries the source at runtime; this file only affects `docker build`.
+Dockerfile
+docker-compose.yml
+.dockerignore
+__pycache__/
+*.pyc
+.pytest_cache/
+.mypy_cache/
