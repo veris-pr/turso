@@ -607,13 +607,17 @@ class Parser:
                 values = self._parse_expr_list()
                 self._expect(TokenType.RP)
                 result = InExpr(result, not_, values)
-            elif tt in (TokenType.LIKE_KW, TokenType.MATCH):
-                # LIKE/GLOB/REGEXP/MATCH — treat as binary operator.
+            elif tt is TokenType.LIKE_KW:
+                # LIKE / GLOB / REGEXP / MATCH
                 self._advance()
                 rhs = self._parse_expr(prec + 1)
-                op = Operator.Equals if not_ else Operator.Equals  # simplified
-                # TODO: map LIKE_KW to a proper operator; for now use a binary expr.
-                result = BinaryExpr(result, op, rhs)
+                op = Operator.Like
+                if not_:
+                    # NOT LIKE → negate: skip if LIKE matches.
+                    # For Phase 6, emit as Like and handle NOT in emitter.
+                    result = UnaryExpr(UnaryOperator.Not, BinaryExpr(result, op, rhs))
+                else:
+                    result = BinaryExpr(result, op, rhs)
             elif tt is TokenType.OR:
                 self._advance()
                 result = BinaryExpr(result, Operator.Or, self._parse_expr(prec + 1))

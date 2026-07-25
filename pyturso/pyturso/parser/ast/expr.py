@@ -48,6 +48,8 @@ class Operator(Enum):
     Or = "OR"
     Is = "IS"
     IsNot = "IS NOT"
+    Like = "LIKE"
+    Glob = "GLOB"
 
 
 class UnaryOperator(Enum):

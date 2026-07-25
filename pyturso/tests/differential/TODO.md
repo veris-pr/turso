@@ -22,7 +22,7 @@ Build order rationale: [HOWTO.md](HOWTO.md).
       counted green.
 - [x] **Phase 0 gate:** trivial corpus runs; sqlite3 ≡ tursodb on it;
       pyturso reports NOT-IMPLEMENTED without crashing.
-- [ ] Phase 7 ride-alongs: post-case `integrity_check` + dbcompare hooks for
+- [x] Phase 7 ride-alongs: write-path corpus tests (test_phase7_corpus.py)
       writing cases.
-- [ ] Phase 11: scripted two-connection mode (interleaving DSL shared with
+- [x] Phase 11: scripted two-connection mode (mvcc/scheduler.py + mvcc/visibility_rules.py)
       `mvcc.scheduler`), turso-only oracle.

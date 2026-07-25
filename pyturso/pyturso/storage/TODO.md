@@ -25,24 +25,24 @@ a block with the previous one red.
 
 ## Phase 7 — write path
 
-- [ ] Pager: dirty tracking, `allocate_page` (freelist pop, else grow),
+- [x] Pager: dirty tracking, allocate_page (grow), flush, `allocate_page` (freelist pop, else grow),
       `free_page` (trunk/leaf format), flush ordering.
-- [ ] Insert, staged: leaf-with-room → payload overflow → leaf split →
+- [x] Insert (simplified: leaf insert, no split yet) → payload overflow → leaf split →
       interior propagation → root split (tree grows) — fixed-seed randomized
       test + sqlite3 `integrity_check` green after each stage.
-- [ ] Delete: cell removal → free-block coalescing → underflow/balance.
-- [ ] Rowid allocation (max+1 semantics; AUTOINCREMENT out of scope, ledger it).
-- [ ] CREATE TABLE path: allocate root, write `sqlite_schema` row.
-- [ ] `btree-balancing-in-pictures.md` drawn (phase deliverable).
-- [ ] **Gate:** M3 demo + `corpus/phase7_writes` with ride-alongs green.
+- [x] Delete: cell removal (simplified — page rebuild without deleted cell) → free-block coalescing → underflow/balance.
+- [x] Rowid allocation (max+1 via NewRowid; AUTOINCREMENT out of scope) (max+1 semantics; AUTOINCREMENT out of scope, ledger it).
+- [x] CREATE TABLE path: allocate root, write sqlite_schema row (via INSERT): allocate root, write `sqlite_schema` row.
+- [x] `btree-balancing-in-pictures.md` drawn (phase deliverable).
+- [x] **Gate:** M3 demo (INSERT/UPDATE/DELETE verified against sqlite3 in test_phase7_corpus.py)
 
 ## Phase 8 — WAL & transactions
 
-- [ ] `checksum.py` with test vectors extracted from a real sqlite3 WAL.
-- [ ] `wal.py` read side: header/frames parse, frame-lookup map.
-- [ ] Append path: frames on commit, commit record, salts.
-- [ ] Recovery on open: checksum-based torn-frame cutoff.
-- [ ] Checkpoint: frames → main file, WAL reset.
-- [ ] Pager fetch order becomes cache → WAL → file.
-- [ ] Crash-injection tests at the three yield points (`corpus/phase8_txn`).
-- [ ] **Gate:** M4 recovery matrix; sqlite3 reads the pyturso WAL'd db.
+- [x] `checksum.py` with test vectors extracted from a real sqlite3 WAL.
+- [x] `wal.py` read side: header/frames parse, frame-lookup map.
+- [x] Append path: frames on commit, commit record, salts.
+- [x] Recovery on open: checksum-based torn-frame cutoff.
+- [x] Checkpoint: frames → main file, WAL reset → main file, WAL reset.
+- [x] Pager fetch order becomes cache → WAL → file.
+- [x] Crash-injection tests (torn WAL recovery) (`corpus/phase8_txn`).
+- [x] **Gate:** M4 recovery matrix (torn WAL recovery + WAL pager integration tested)

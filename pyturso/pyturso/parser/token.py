@@ -220,7 +220,7 @@ class TokenType(IntEnum):
             TokenType.UNBOUNDED, TokenType.WINDOW, TokenType.WITHIN,
             TokenType.GROUPS, TokenType.EXCLUDE, TokenType.NULLS,
             TokenType.CURRENT, TokenType.GENERATED, TokenType.ALWAYS,
-            TokenType.TYPE, TokenType.CONCURRENT, TokenType.OPTIMIZE,
+            TokenType.TYPE, TokenType.CONCURRENT, TokenType.OPTIMIZE, TokenType.LIKE_KW, TokenType.REPLACE, TokenType.ROW, TokenType.ROWS,
         )
 
 
