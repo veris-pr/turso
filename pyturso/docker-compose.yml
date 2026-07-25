@@ -1,0 +1,21 @@
+# Dev/test container for pyturso. The whole repo is bind-mounted so both
+# the pyturso/ project and the Rust reference tree (core/, sqlite/, ...) are
+# visible inside the container; only the pyturso/ subtree is ever executed.
+#
+# Usage:
+#   docker compose up -d
+#   docker compose exec pyturso bash
+#   docker compose exec pyturso python -m pytest tests/unit -q
+services:
+  pyturso:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    working_dir: /workspace/pyturso
+    volumes:
+      # pyturso/docker-compose.yml sits one level below the repo root, so
+      # ".." resolves to the repo root and exposes it as /workspace.
+      - ..:/workspace
+    # Keep the container alive; real work happens through `docker compose exec`.
+    command: ["sleep", "infinity"]
+    init: true

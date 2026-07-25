@@ -1,0 +1,23 @@
+[project]
+name = "pyturso"
+version = "0.0.1"
+description = "Python port of the Turso database engine — parity-targeting, Rust-as-source-of-truth, understanding as the end goal"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "mypy>=1.10"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["pyturso*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.mypy]
+strict = true
+python_version = "3.11"
